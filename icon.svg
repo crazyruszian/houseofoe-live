@@ -1,10 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1042 1063" role="img" aria-label="House of OE">
-  <style>
-    path { fill: #0d0d0d; }
-    @media (prefers-color-scheme: dark) { path { fill: #ece8e5; } }
-  </style>
-  
-  <g transform="translate(0.000000,1063.000000) scale(0.100000,-0.100000)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="House of OE">
+  <rect width="64" height="64" rx="8" fill="#0d0d0d"/>
+  <svg x="9" y="9" width="46" height="46" viewBox="0 0 1042 1063" preserveAspectRatio="xMidYMid meet">
+    <g stroke="#ece8e5" stroke-width="14" stroke-linejoin="round" fill="#ece8e5" transform="translate(0.000000,1063.000000) scale(0.100000,-0.100000)">
     <path d="M3700 10440 c-30 -4 -100 -9 -155 -9 -55 -1 -125 -8 -155 -16 -30 -8
 -77 -15 -105 -15 -27 0 -61 -7 -75 -15 -14 -8 -45 -15 -70 -15 -25 0 -54 -7
 -64 -15 -11 -8 -36 -15 -55 -15 -20 0 -45 -7 -55 -15 -11 -8 -34 -15 -50 -15
@@ -137,5 +134,5 @@ l-925 -5 -1 -117 c0 -65 3 -123 6 -129 5 -8 267 -11 921 -13 921 -2 948 -2
 -150 31 -161 18 -11 186 -12 193 0 3 5 6 579 6 1277 1 1019 -2 1269 -12 1276
 -22 14 -184 10 -197 -5z"/>
   </g>
-
+  </svg>
 </svg>
