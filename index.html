@@ -107,6 +107,7 @@
     transition:opacity .25s;
   }
   .row:hover{opacity:0.6;}
+  .row.static:hover{opacity:1;}
   .row:first-of-type{padding-top:0;}
   .row .name{
     font-family:'Instrument Serif',serif;
@@ -128,7 +129,9 @@
     font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--fg);
     border-bottom:1px solid var(--fg);
     padding-bottom:2px;
+    text-decoration:none;
   }
+  a.visit:hover{color:#555;border-color:#555;}
 
   /* ---------- NOTE ---------- */
   .note{padding:0 0 90px;text-align:center;}
@@ -333,6 +336,15 @@ l-925 -5 -1 -117 c0 -65 3 -123 6 -129 5 -8 267 -11 921 -13 921 -2 948 -2
       <span class="visit">Visit luvmyslf.com →</span>
     </div>
   </a>
+
+  <div class="row static">
+    <div>
+      <div class="name">seter</div>
+      <div class="cat">Messaging · Private</div>
+      <p class="desc">A closed, invite-only messaging app for a small circle. End-to-end encrypted — nothing is seen, nothing is stored.</p>
+      <a class="visit" href="seter-privacy.html">Privacy Policy →</a>
+    </div>
+  </div>
 </div>
 
 <div class="wrap note">
