@@ -100,10 +100,10 @@
     <div class="updated">Last updated: August 2026</div>
 
     <h2>What we do not collect</h2>
-    <p>seter does not collect or store: your real name, phone number, email address, contact list, message content, photos, voice messages, or files you send. All messages, photos, voice messages, and files are end-to-end encrypted on your device before they are sent — our servers cannot read them, and never store them permanently.</p>
+    <p>seter does not collect or store: your real name, phone number, email address, contact list, message content, photos, videos, voice messages, files, or group names/titles. All messages, photos, videos, voice messages, and files are end-to-end encrypted on your device (X3DH + Double Ratchet for 1:1 chats, Sender Keys for groups) before they are sent — our servers cannot read them, and never store them permanently.</p>
 
     <h2>What we process, and why</h2>
-    <p>To operate the service, our servers process the minimum technical data required for message delivery:</p>
+    <p>seter requires no phone number and no email address to use — access is invite-only via a one-time invite code, which creates a device-bound identity. To operate the service, our servers process only the minimum technical data required for message delivery:</p>
     <ul>
       <li>A device-generated public cryptographic key (your private key never leaves your device)</li>
       <li>An optional username you choose (not your real identity)</li>
@@ -111,11 +111,14 @@
       <li>Basic technical metadata needed to route messages (which device sent to which device, and when) — this is an unavoidable part of any message delivery system, and we minimize what we retain</li>
     </ul>
 
+    <h2>Disappearing messages &amp; screenshots</h2>
+    <p>Disappearing messages can be enabled per chat or group with a configurable timer. On iOS, screenshots of chats are blocked at the system level.</p>
+
     <h2>Push notifications</h2>
     <p>Push notifications only ever say "New message" — they never contain any message content, sender name, or preview.</p>
 
     <h2>Account deletion</h2>
-    <p>You can permanently delete your account and all local data at any time from within the app ("Delete seter" in settings). This is irreversible. Deleting your account also removes any pending encrypted data from our servers.</p>
+    <p>You can permanently delete your account and all local data at any time from within the app ("Delete seter" in Settings). This is irreversible. Deleting your account also removes any pending encrypted data from our servers.</p>
 
     <h2>Third parties</h2>
     <p>seter uses Supabase for backend infrastructure (encrypted message relay and minimal account data) and Apple/Google push notification services (to deliver the generic "New message" signal only). We do not use advertising services, analytics trackers, or share data with third parties for marketing purposes.</p>
