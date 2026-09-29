@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>seter — Privacy &amp; Child Safety</title>
+<title>seter — Privacy, Terms &amp; Child Safety</title>
 <style>
   :root{
     --bg:#111110;
@@ -35,14 +35,14 @@
   .lede{font-size:15px;font-weight:300;color:#c9c8be;max-width:480px;margin-bottom:36px;}
 
   nav.jump{
-    display:flex;gap:24px;
+    display:flex;gap:20px;flex-wrap:wrap;
     padding:18px 0;
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
     margin-bottom:16px;
   }
   nav.jump a{
-    font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);
+    font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);
     text-decoration:none;
   }
   nav.jump a:hover{color:var(--fg);}
@@ -81,75 +81,137 @@
   footer{padding:60px 0 0;border-top:1px solid var(--line);margin-top:60px;}
   footer span{font-size:10.5px;letter-spacing:0.1em;color:var(--dim);}
 
-  @media (max-width:640px){.wrap{padding:64px 24px 90px;} nav.jump{gap:16px;flex-wrap:wrap;}}
+  @media (max-width:640px){.wrap{padding:64px 24px 90px;} nav.jump{gap:14px;}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <span class="word">seter</span>
-  <h1>Privacy &amp; Child Safety</h1>
-  <p class="lede">seter is a closed, invite-only messaging app for a small circle. Everything is end-to-end encrypted — nothing is seen, nothing is stored. This page covers what data we process and our commitment to child safety.</p>
+  <h1>Privacy, Terms &amp; Child Safety</h1>
+  <p class="lede">seter is a closed, invite-only messaging app for a small circle. Everything is end-to-end encrypted — nothing is seen, nothing is stored. This page covers what data we process, the terms of using seter, and our commitment to child safety.</p>
 
   <nav class="jump">
     <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms of Service</a>
     <a href="#child-safety">Child Safety</a>
   </nav>
 
   <section id="privacy">
     <div class="section-title">Privacy Policy</div>
-    <div class="updated">Last updated: August 2026</div>
-
-    <h2>What we do not collect</h2>
-    <p>seter does not collect or store: your real name, phone number, email address, contact list, message content, photos, voice messages, or files you send. All messages, photos, voice messages, and files are end-to-end encrypted on your device before they are sent — our servers cannot read them, and never store them permanently.</p>
-
-    <h2>What we process, and why</h2>
-    <p>To operate the service, our servers process the minimum technical data required for message delivery:</p>
+    <div class="updated">Last updated: September 2026</div>
+    <h2>Controller</h2>
+    <p>House of OE, Oskar Etinger, Leopoldstraße 31, 80802 München, Germany</p>
+    <p>Contact: oskar@houseofoe.com</p>
+    <h2>What we collect</h2>
+    <p>seter is designed to collect as little data as technically possible. This is everything our servers process:</p>
     <ul>
-      <li>A device-generated public cryptographic key (your private key never leaves your device)</li>
-      <li>An optional username you choose (not your real identity)</li>
-      <li>Encrypted message content, held temporarily only until delivered to the recipient, then deleted (maximum 14 days if undelivered)</li>
-      <li>Basic technical metadata needed to route messages (which device sent to which device, and when) — this is an unavoidable part of any message delivery system, and we minimize what we retain</li>
+    <li>Account: a pseudonymous device ID, the public cryptographic keys your device registered, your public User ID (a short code others use to find you), your ONE status if you have one, when your account was created, and when it was last active (updated whenever the app checks for new messages). No names, no email addresses, no phone numbers.</li>
+    <li>Invite code: the invite code used to register is stored as a one-way hash, linked to the device that used it, until that account is deleted.</li>
+    <li>Groups: for every group you are in, the group's ID, the device IDs of its members and admin, and when members joined or left. Group names and settings are end-to-end encrypted and never visible to us.</li>
+    <li>Blocking: if you block someone, the two device IDs and the time are stored so that messages from that person are refused.</li>
+    <li>Messages: all messages are end-to-end encrypted on your device before transmission. While a message waits for delivery we store the ciphertext, which we cannot read, together with routing details: the sender's and recipient's device IDs, the group ID (for group messages), the type of content (text, photo, voice message, file or video), and the time. A message is deleted immediately after it has been delivered. A message that is never delivered is deleted automatically after 30 days.</li>
+    <li>Operational log: a short record when an account is created or deleted, or an invite code is created, used or revoked (event type, device ID, User ID or invite label, and time). Deleted automatically after 30 days.</li>
+    <li>Administrator notes: the administrator may attach an internal label or note to a device, for example to recognise a tester. It is visible only to the administrator and is deleted together with the account.</li>
+    <li>Reports: what a report contains is described under "Reports" below.</li>
+    <li>On your device: All messages, contacts, and media are stored exclusively on your device, encrypted with keys that never leave your device.</li>
+    <li>Rate limiting: IP addresses are used temporarily for abuse prevention and deleted automatically after 1 hour.</li>
+    <li>Push notification tokens: if you enable notifications, a device-specific push token is stored so we can wake your device when a new message arrives. The push notification itself is entirely generic ("seter — New message") — your device resolves and displays the actual sender's name (your local nickname for them, their username, or their public short ID) entirely on-device, after the notification arrives. Neither we nor Expo/Apple/Google ever see who a message is from or its content.</li>
+    <li>Muted conversations: if you mute a specific chat or group, a technical identifier (the group's ID, or the other person's device ID — never a name or message content) is stored on our server, solely so we know not to play a sound for that conversation's notifications. Removed automatically when you unmute.</li>
     </ul>
+    <h2>Reports</h2>
+    <p>You can report a problem or another user from within the app. When you do, we receive only:</p>
+    <ul>
+    <li>the topic you chose and the description you write</li>
+    <li>your User ID</li>
+    <li>for a report about another user: that user's User ID</li>
+    <li>for a problem report only: your device type (iOS or Android), the operating system version, and the app version</li>
+    </ul>
+    <p>We never receive message content, chats, your contact list, photos, or other account data. Reports are seen only by the administrator, in a private admin tool. We do not tell the person you reported that you reported them, unless we are legally required to. Blocking someone after you report them is your own choice and is not part of the report.</p>
+    <p>Purpose: to look into problems, protect users, and prevent abuse.</p>
+    <p>Retention: an open report is kept until we have handled it. A handled report is deleted automatically 180 days later. If we need to keep a report longer to meet a legal obligation or to establish, exercise or defend legal claims, we keep it for as long as that is necessary. Reports you sent are deleted together with your account. A report about an account may be kept for its retention period even after that account has been deleted.</p>
+    <h2>Legal basis</h2>
+    <p>Art. 6(1)(b) GDPR — performance of contract (providing the service)</p>
+    <p>Art. 6(1)(f) GDPR — legitimate interest (security, abuse prevention, and handling reports)</p>
+    <p>Art. 6(1)(c) GDPR — legal obligation (where we must act on illegal content or respond to a lawful request)</p>
+    <h2>Data processor</h2>
+    <p>We use Supabase (server location: Frankfurt am Main, Germany, EU) as our primary data processor under Art. 28 GDPR for message relay and account data. A Data Processing Agreement (DPA) is in place.</p>
+    <p>If you enable push notifications, your device's push token is processed by Expo (push relay service) and, depending on your platform, Apple (APNs) or Google (Firebase Cloud Messaging) solely to deliver a generic, content-free wake-up notification. These providers never receive message content, sender names, your chosen local nicknames, or encryption keys — the actual sender is resolved and displayed entirely on your device, after delivery.</p>
+    <h2>Data transfers</h2>
+    <p>Your account data and messages are processed exclusively within the EU (Supabase, Frankfurt).</p>
+    <p>If you enable push notifications, your device's push token (not message content) may be processed outside the EU by Expo, Apple, or Google as part of their notification delivery infrastructure. Where this involves the US, it relies on those providers' own compliance frameworks (e.g. EU-US Data Privacy Framework or Standard Contractual Clauses). You can disable push notifications at any time in your device settings — the app continues to work normally without them.</p>
+    <h2>Retention</h2>
+    <p>Server (message queue): every message is deleted from our server immediately and automatically once it has been delivered to your device and successfully decrypted — typically within seconds. We never retain a copy of message content on our infrastructure. A message that is never delivered (for example because the recipient never opens the app again) is deleted automatically after 30 days.</p>
+    <p>Your device (local storage): messages, photos, voice messages, and files you send or receive are stored locally on your own device, encrypted at rest, for as long as you choose to keep them. We do not automatically delete messages from your device after you have read them — they remain until you delete an individual chat, delete your account, or uninstall the app. This is a deliberate design choice so you are never surprised by content disappearing.</p>
+    <p>IP addresses (rate limiting): deleted after 1 hour.</p>
+    <p>Full account deletion: you can delete your account and all associated data at any time under Settings → Delete seter, or an administrator can delete your device from the server side. Either action immediately and permanently erases: all data on our servers (device record, queued messages, group memberships, blocking records, push tokens, prekeys, and any administrator note about your device), and all data on your device (the local message database, all cryptographic keys, cached profile data, and any locally stored photos/voice messages/files). Deletion is immediate and irreversible. The only things that can remain for a limited time are a short operational log entry recording the deletion (30 days), and reports about your account (see "Reports").</p>
+    <h2>Your rights (Art. 15–22 GDPR)</h2>
+    <p>You have the right to access, rectification, erasure, restriction, and portability of your personal data.</p>
+    <p>To exercise your rights, contact: oskar@houseofoe.com</p>
+    <p>If you ask for access to your data, we provide the personal data we hold about your account. To protect other people's rights and safety, we do not include information that would reveal other users' decisions or actions towards you, for example who has blocked or reported you.</p>
+    <p>You may lodge a complaint with the competent data protection authority (in Germany: the Bayerisches Landesamt für Datenschutzaufsicht, or the authority of your place of residence).</p>
+    <h2>No tracking, no analytics</h2>
+    <p>seter contains no advertising, no tracking, no analytics, and no third-party SDKs that collect personal data.</p>
+  </section>
 
-    <h2>Push notifications</h2>
-    <p>Push notifications only ever say "New message" — they never contain any message content, sender name, or preview.</p>
+  <hr class="div">
 
-    <h2>Account deletion</h2>
-    <p>You can permanently delete your account and all local data at any time from within the app ("Delete seter" in settings). This is irreversible. Deleting your account also removes any pending encrypted data from our servers.</p>
-
-    <h2>Third parties</h2>
-    <p>seter uses Supabase for backend infrastructure (encrypted message relay and minimal account data) and Apple/Google push notification services (to deliver the generic "New message" signal only). We do not use advertising services, analytics trackers, or share data with third parties for marketing purposes.</p>
-
-    <h2>Children</h2>
-    <p>seter is not intended for use by children and is distributed only to a closed, invited group of adult users.</p>
-
+  <section id="terms">
+    <div class="section-title">Terms of Service</div>
+    <div class="updated">Last updated: September 2026</div>
+    <h2>Acceptance</h2>
+    <p>By registering for and using seter, you agree to these Terms of Service. If you don't agree, please don't use the app.</p>
+    <h2>Invite-only access</h2>
+    <p>seter is invite-only. Access requires a valid, unused invite code issued by us or an existing user we've authorized to distribute codes. We may revoke, expire, or refuse to issue invite codes at our discretion.</p>
+    <h2>Acceptable use</h2>
+    <p>You agree not to use seter to:</p>
+    <ul>
+    <li>Send content that is illegal, threatening, or exploits or harms minors in any way</li>
+    <li>Harass, abuse, or threaten other users</li>
+    <li>Attempt to reverse-engineer, decompile, or interfere with the app's encryption or security</li>
+    <li>Use seter for any purpose that violates applicable law</li>
+    </ul>
+    <p>Because messages are end-to-end encrypted, we cannot see message content and cannot proactively monitor for violations — but we will act on reports and cooperate with lawful requests as described in our Privacy Policy and Child Safety Standards.</p>
+    <h2>Reporting and enforcement</h2>
+    <p>You can report a problem or another user from within the app. Because we cannot read message content, we act on reports at the account level: we may warn, suspend, or permanently delete an account that breaks these Terms or the law. We review reports in good faith, but we cannot promise a particular outcome or timeframe. Please report honestly — knowingly false or abusive reports may themselves lead to action against your account. If someone is in immediate danger, contact your local emergency services first.</p>
+    <p>The Privacy Policy explains what a report contains and how long it is kept.</p>
+    <h2>Your account and device</h2>
+    <p>Your account is tied to your device's cryptographic identity, not a username or email. You're responsible for keeping your device secure. We can suspend or permanently delete a device's access at our discretion — for example, in response to abuse, a security concern, or a valid request from you or law enforcement.</p>
+    <p>Deleting your account (or having it deleted) is permanent and irreversible — see the Privacy Policy for exactly what's removed.</p>
+    <h2>No warranty</h2>
+    <p>seter is provided "as is," without warranties of any kind, express or implied. We don't guarantee the app will be uninterrupted, error-free, or available at all times. As with any software, especially one that hasn't undergone a full independent security audit, we can't guarantee absolute security.</p>
+    <h2>Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, we aren't liable for any indirect, incidental, or consequential damages arising from your use of seter, including loss of messages, data, or access to your account.</p>
+    <h2>Intellectual property</h2>
+    <p>The seter app, its design, and its source code belong to us. These Terms don't grant you any rights to our intellectual property beyond using the app as intended.</p>
+    <h2>Changes to these terms</h2>
+    <p>We may update these Terms from time to time. Continued use of seter after a change means you accept the updated Terms. We'll note significant changes where practical.</p>
+    <h2>Governing law</h2>
+    <p>These Terms are governed by German law. Any disputes will be resolved in the competent courts of Germany, to the extent permitted by applicable consumer-protection law in your jurisdiction.</p>
     <h2>Contact</h2>
-    <p>For questions about this policy, contact: <a class="inline" href="mailto:oskar@houseofoe.com">oskar@houseofoe.com</a></p>
+    <p>Questions about these Terms: oskar@houseofoe.com</p>
   </section>
 
   <hr class="div">
 
   <section id="child-safety">
     <div class="section-title">Child Safety Standards</div>
-    <div class="updated">Last updated: August 2026</div>
-
-    <div class="statement">
-      seter has zero tolerance for child sexual abuse and exploitation (CSAE) material or behavior of any kind.
-    </div>
-
-    <h2>Prevention</h2>
-    <p>seter is not a public platform. Access is invite-only, limited to a small, known group of adults vetted personally by existing members. There is no public discovery, no open registration, and no mechanism for strangers to contact users.</p>
-
+    <div class="updated">Last updated: September 2026</div>
+    <div class="statement">seter has a zero-tolerance policy for any content that sexually exploits minors (CSAM) or facilitates harm to children in any way.</div>
+    <h2>Our commitment</h2>
+    <p>seter is built so that this commitment is backed by the architecture itself, not only by policy.</p>
+    <h2>How seter works</h2>
+    <p>seter is an invite-only, end-to-end encrypted messenger. Access is restricted exclusively to invited users. All messages are encrypted on your device — we have no technical ability to read any content.</p>
+    <p>The invite-only model significantly reduces the risk of abuse by unknown parties.</p>
     <h2>Reporting</h2>
-    <p>If you encounter content or behavior on seter that concerns child safety, contact us immediately at: <a class="inline" href="mailto:oskar@houseofoe.com">oskar@houseofoe.com</a></p>
-    <p>Reports are reviewed and, where required by law, referred to the relevant national and regional authorities (in Germany: Bundeskriminalamt / local law enforcement; see also the National Center for Missing &amp; Exploited Children, NCMEC, for international reporting: <a class="inline" href="https://report.cybertip.org" target="_blank" rel="noopener">report.cybertip.org</a>).</p>
-
-    <h2>Compliance</h2>
-    <p>seter complies with all applicable laws regarding the protection of minors, including relevant provisions under German and EU law (including the EU Digital Services Act). Because seter uses end-to-end encryption, we cannot access message content — reports rely on users flagging concerning content or behavior directly to us via the contact above.</p>
-
-    <h2>Contact</h2>
-    <p>Responsible contact: Oskar Etinger<br>
-    <a class="inline" href="mailto:oskar@houseofoe.com">oskar@houseofoe.com</a></p>
+    <p>If you encounter any content or behavior that puts a child at risk:</p>
+    <ul>
+    <li>In the app: open the contact's profile, tap "Report user" and choose "Child safety concern". These reports are marked as urgent.</li>
+    <li>By email: oskar@houseofoe.com</li>
+    </ul>
+    <p>If a child is in immediate danger, contact your local emergency services first.</p>
+    <p>Because messages are end-to-end encrypted, we cannot see the content itself, so please describe what happened in your report. We will take immediate action on the account and report to the relevant authorities as required by applicable law, including the German Criminal Code (§§ 184b, 184c StGB) and EU regulations.</p>
+    <h2>Legal compliance</h2>
+    <p>We comply with all applicable laws regarding child safety, including German law (StGB, JuSchG) and EU law. We cooperate fully with law enforcement authorities upon receipt of lawful requests.</p>
   </section>
 
   <footer><span>© 2026 House of OE — Oskar Etinger</span></footer>
